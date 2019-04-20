@@ -64,10 +64,11 @@
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 
+		<!-- mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<version>8.0.15</version>
 		</dependency>
 
 		<!-- 解决spring boot Configuration Annotation Proessor not found in classpath
