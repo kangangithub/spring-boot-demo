@@ -1,11 +1,11 @@
-# springbootdemo
+# spring-boot-demo
 
 #### 项目介绍
 Spring Boot 2.0与其他框架集成的Demo, 集成MyBatis, Mybatis Generator, Mybatis-Plus, hikari连接池(2.0默认), PageHelper(分页), Redis(CRUD,缓存,发布订阅), Ehcache 3.x(缓存), AOP切面日志
 
 ####  组织架构
 ```$xslt
-springbootdemo
+spring-boot-demo
 |
 |--aop  Spring Boot 2.0 整合 AOP面向切面编程
 |   |--annotation  自定义注解
