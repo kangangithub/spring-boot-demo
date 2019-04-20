@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot2.helloworld.dao.EvaluationResultMapper">
+  <resultMap id="BaseResultMap" type="com.springboot2.helloworld.domain.EvaluationResult">
+    <!--
+      @MBG Generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="over_all" jdbcType="VARCHAR" property="overAll" />
+    <result column="risk_write" jdbcType="VARCHAR" property="riskWrite" />
+    <result column="product_type_1" jdbcType="VARCHAR" property="productType1" />
+    <result column="product_code_1" jdbcType="VARCHAR" property="productCode1" />
+    <result column="copy_write_1" jdbcType="VARCHAR" property="copyWrite1" />
+    <result column="product_type_2" jdbcType="VARCHAR" property="productType2" />
+    <result column="product_code_2" jdbcType="VARCHAR" property="productCode2" />
+    <result column="copy_write_2" jdbcType="VARCHAR" property="copyWrite2" />
+    <result column="product_type_3" jdbcType="VARCHAR" property="productType3" />
+    <result column="product_code_3" jdbcType="VARCHAR" property="productCode3" />
+    <result column="copy_write_3" jdbcType="VARCHAR" property="copyWrite3" />
+    <result column="evaluation_person" jdbcType="VARCHAR" property="evaluationPerson" />
+    <result column="agent_code" jdbcType="VARCHAR" property="agentCode" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      @MBG Generated
+    -->
+    id, over_all, risk_write, product_type_1, product_code_1, copy_write_1, product_type_2, 
+    product_code_2, copy_write_2, product_type_3, product_code_3, copy_write_3, evaluation_person, 
+    agent_code, create_time
+  </sql>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from znbx_evaluation_result
+  </select>
+  <select id="selectByAgentCode" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from znbx_evaluation_result
+    WHERE agent_code = #{agentCode,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      @MBG Generated
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from znbx_evaluation_result
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      @MBG Generated
+    -->
+    delete from znbx_evaluation_result
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.springboot2.helloworld.domain.EvaluationResult">
+    <!--
+      @MBG Generated
+    -->
+    insert into znbx_evaluation_result (id, over_all, risk_write, 
+      product_type_1, product_code_1, copy_write_1, 
+      product_type_2, product_code_2, copy_write_2, 
+      product_type_3, product_code_3, copy_write_3, 
+      evaluation_person, agent_code, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{overAll,jdbcType=VARCHAR}, #{riskWrite,jdbcType=VARCHAR}, 
+      #{productType1,jdbcType=VARCHAR}, #{productCode1,jdbcType=VARCHAR}, #{copyWrite1,jdbcType=VARCHAR}, 
+      #{productType2,jdbcType=VARCHAR}, #{productCode2,jdbcType=VARCHAR}, #{copyWrite2,jdbcType=VARCHAR}, 
+      #{productType3,jdbcType=VARCHAR}, #{productCode3,jdbcType=VARCHAR}, #{copyWrite3,jdbcType=VARCHAR}, 
+      #{evaluationPerson,jdbcType=VARCHAR}, #{agentCode,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.springboot2.helloworld.domain.EvaluationResult">
+    <!--
+      @MBG Generated
+    -->
+    insert into znbx_evaluation_result
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="overAll != null">
+        over_all,
+      </if>
+      <if test="riskWrite != null">
+        risk_write,
+      </if>
+      <if test="productType1 != null">
+        product_type_1,
+      </if>
+      <if test="productCode1 != null">
+        product_code_1,
+      </if>
+      <if test="copyWrite1 != null">
+        copy_write_1,
+      </if>
+      <if test="productType2 != null">
+        product_type_2,
+      </if>
+      <if test="productCode2 != null">
+        product_code_2,
+      </if>
+      <if test="copyWrite2 != null">
+        copy_write_2,
+      </if>
+      <if test="productType3 != null">
+        product_type_3,
+      </if>
+      <if test="productCode3 != null">
+        product_code_3,
+      </if>
+      <if test="copyWrite3 != null">
+        copy_write_3,
+      </if>
+      <if test="evaluationPerson != null">
+        evaluation_person,
+      </if>
+      <if test="agentCode != null">
+        agent_code,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="overAll != null">
+        #{overAll,jdbcType=VARCHAR},
+      </if>
+      <if test="riskWrite != null">
+        #{riskWrite,jdbcType=VARCHAR},
+      </if>
+      <if test="productType1 != null">
+        #{productType1,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode1 != null">
+        #{productCode1,jdbcType=VARCHAR},
+      </if>
+      <if test="copyWrite1 != null">
+        #{copyWrite1,jdbcType=VARCHAR},
+      </if>
+      <if test="productType2 != null">
+        #{productType2,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode2 != null">
+        #{productCode2,jdbcType=VARCHAR},
+      </if>
+      <if test="copyWrite2 != null">
+        #{copyWrite2,jdbcType=VARCHAR},
+      </if>
+      <if test="productType3 != null">
+        #{productType3,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode3 != null">
+        #{productCode3,jdbcType=VARCHAR},
+      </if>
+      <if test="copyWrite3 != null">
+        #{copyWrite3,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluationPerson != null">
+        #{evaluationPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="agentCode != null">
+        #{agentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.springboot2.helloworld.domain.EvaluationResult">
+    <!--
+      @MBG Generated
+    -->
+    update znbx_evaluation_result
+    <set>
+      <if test="overAll != null">
+        over_all = #{overAll,jdbcType=VARCHAR},
+      </if>
+      <if test="riskWrite != null">
+        risk_write = #{riskWrite,jdbcType=VARCHAR},
+      </if>
+      <if test="productType1 != null">
+        product_type_1 = #{productType1,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode1 != null">
+        product_code_1 = #{productCode1,jdbcType=VARCHAR},
+      </if>
+      <if test="copyWrite1 != null">
+        copy_write_1 = #{copyWrite1,jdbcType=VARCHAR},
+      </if>
+      <if test="productType2 != null">
+        product_type_2 = #{productType2,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode2 != null">
+        product_code_2 = #{productCode2,jdbcType=VARCHAR},
+      </if>
+      <if test="copyWrite2 != null">
+        copy_write_2 = #{copyWrite2,jdbcType=VARCHAR},
+      </if>
+      <if test="productType3 != null">
+        product_type_3 = #{productType3,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode3 != null">
+        product_code_3 = #{productCode3,jdbcType=VARCHAR},
+      </if>
+      <if test="copyWrite3 != null">
+        copy_write_3 = #{copyWrite3,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluationPerson != null">
+        evaluation_person = #{evaluationPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="agentCode != null">
+        agent_code = #{agentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.springboot2.helloworld.domain.EvaluationResult">
+    <!--
+      @MBG Generated
+    -->
+    update znbx_evaluation_result
+    set over_all = #{overAll,jdbcType=VARCHAR},
+      risk_write = #{riskWrite,jdbcType=VARCHAR},
+      product_type_1 = #{productType1,jdbcType=VARCHAR},
+      product_code_1 = #{productCode1,jdbcType=VARCHAR},
+      copy_write_1 = #{copyWrite1,jdbcType=VARCHAR},
+      product_type_2 = #{productType2,jdbcType=VARCHAR},
+      product_code_2 = #{productCode2,jdbcType=VARCHAR},
+      copy_write_2 = #{copyWrite2,jdbcType=VARCHAR},
+      product_type_3 = #{productType3,jdbcType=VARCHAR},
+      product_code_3 = #{productCode3,jdbcType=VARCHAR},
+      copy_write_3 = #{copyWrite3,jdbcType=VARCHAR},
+      evaluation_person = #{evaluationPerson,jdbcType=VARCHAR},
+      agent_code = #{agentCode,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <cache eviction="LRU" flushInterval="60000" readOnly="true" size="1560">
+    <!--
+      @MBG Generated
+    -->
+  </cache>
+</mapper>

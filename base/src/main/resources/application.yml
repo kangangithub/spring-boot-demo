@@ -1,0 +1,20 @@
+# Spring
+spring:
+  # 连接池配置, spring boot 2.0默认hikariCP, pom.xml中不需额外添加依赖
+  datasource:
+    # 新路径 com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://116.62.198.241:3306/insure_eval?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: Ak902078.
+#    type: com.alibaba.druid.pool.DruidDataSource
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: hikariDataSource
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1

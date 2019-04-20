@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!-- jdbc路径 -->
+    <classPathEntry location="D:\Repository\mysql\mysql-connector-java\5.1.35\mysql-connector-java-5.1.35.jar" />
+    <context id="context" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$" />
+            <property name="replaceString" value="Criteria" />
+        </plugin>
+        <plugin type="org.mybatis.generator.plugins.CachePlugin">
+            <property name="cache_eviction" value="LRU" />
+            <property name="cache_flushInterval" value="60000" />
+            <property name="cache_readOnly" value="true" />
+            <property name="cache_size" value="1560" />
+        </plugin>
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin">
+            <property name="suppressJavaInterface" value="false" />
+        </plugin>
+        <!-- 注释 -->
+        <commentGenerator type="org.mybatis.generator.internal.CustomeCommentGenerator">
+            <property name="javaFileEncoding" value="UTF-8"/>
+            <property name="suppressDate" value="true" /><!-- 是否去掉生成注释时间戳-->
+            <property name="suppressAllComments" value="false" /><!-- 是否取消注释 -->
+        </commentGenerator>
+
+        <!-- 请填写connectionURL、userId、password -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://116.62.198.241:3306/hrhbbx"
+                        userId="root"
+                        password="Ak902078." />
+
+        <!-- 生成持久化对象 -->
+        <javaModelGenerator targetPackage="com.springboot2.helloworld.domain"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- 生成mapper.xml文件 -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- 生成Mapper接口 -->
+        <javaClientGenerator targetPackage="com.springboot2.helloworld.dao"
+                             targetProject="src/main/java" type="XMLMAPPER">
+
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+
+        <!-- 需要生成的数据库表 -->
+        <table tableName="znbx_evaluation_result" domainObjectName="EvaluationResult" enableSelectByPrimaryKey="true"
+            enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" enableInsert="true" enableUpdateByExample="false"
+            enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false">
+        </table>
+    </context>
+</generatorConfiguration>
